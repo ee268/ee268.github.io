@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2026-02-07T15:50:23.189Z</updated>
+  <updated>2026-02-08T17:58:53.153Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,53 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2026/02/08/hello-world/"/>
-    <id>http://example.com/2026/02/08/hello-world/</id>
-    <published>2026-02-08T08:58:37.088Z</published>
-    <updated>2026-02-07T15:50:23.189Z</updated>
+    <title>牛客网 - 迷宫问题（C语言）</title>
+    <link href="http://example.com/2024/04/22/%E7%89%9B%E5%AE%A2%E7%BD%91%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98C%E8%AF%AD%E8%A8%80/"/>
+    <id>http://example.com/2024/04/22/%E7%89%9B%E5%AE%A2%E7%BD%91%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98C%E8%AF%AD%E8%A8%80/</id>
+    <published>2024-04-22T08:45:38.000Z</published>
+    <updated>2026-02-08T17:58:53.153Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;ul class=&quot;markdownIt-TOC&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#1%E8%BE%93%E5%85%A5&quot;&gt;1.输入&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2%E8%BE%93%E5%87%BA&quot;&gt;2.输出&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a</summary>
         
       
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>测试文章</title>
-    <link href="http://example.com/2025/02/08/test/"/>
-    <id>http://example.com/2025/02/08/test/</id>
-    <published>2025-02-07T17:17:00.000Z</published>
-    <updated>2026-02-07T17:20:49.923Z</updated>
+    <category term="C" scheme="http://example.com/categories/C/"/>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;haha&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#haha&quot;&gt;&lt;/a&gt; haha&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;testestsetsetsetest&lt;/p&gt;
-&lt;h1 id=&quot;xixi&quot;&gt;&lt;a</summary>
-        
-      
+    <category term="c语言" scheme="http://example.com/tags/c%E8%AF%AD%E8%A8%80/"/>
     
+    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-    
-    <category term="C++" scheme="http://example.com/categories/C/"/>
-    
-    
-    <category term="tag1" scheme="http://example.com/tags/tag1/"/>
-    
-    <category term="tag2" scheme="http://example.com/tags/tag2/"/>
+    <category term="深度优先搜索" scheme="http://example.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
