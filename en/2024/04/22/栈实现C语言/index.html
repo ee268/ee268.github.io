@@ -1,0 +1,669 @@
+  <!DOCTYPE html>
+  <html lang="en"  
+      data-theme-mode="auto"
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_4k4bc36ef96';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)","en":"Copy successfully (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ","en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'http://example.com';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
+  <title>
+    C语言实现 - 栈 | ee268的个人博客
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preload" as="style" href="https://fontsapi.zeoseven.com/292/main/result.css" onload="this.rel='stylesheet'" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="栈的介绍 !入栈动图演示 1.创建栈 2.各接口创建  1- 初始化栈 2 - 销毁栈 3 - 入栈 4 - 出栈 5 -  取出栈顶数据 6 - 计算栈的大小 7 - 栈的判空    (文章目录)   前言  栈的介绍 栈是一种特殊的线性表，数据的存取方式是后进先出，最后进入的数据称为栈顶，第一个进入的数据称为栈底。只能在栈顶对数据进行读取、删除、插入。 删除数据称作：出栈或退栈 插入数据称作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言实现 - 栈">
+<meta property="og:url" content="http://example.com/en/2024/04/22/%E6%A0%88%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:site_name" content="ee268的个人博客">
+<meta property="og:description" content="栈的介绍 !入栈动图演示 1.创建栈 2.各接口创建  1- 初始化栈 2 - 销毁栈 3 - 入栈 4 - 出栈 5 -  取出栈顶数据 6 - 计算栈的大小 7 - 栈的判空    (文章目录)   前言  栈的介绍 栈是一种特殊的线性表，数据的存取方式是后进先出，最后进入的数据称为栈顶，第一个进入的数据称为栈底。只能在栈顶对数据进行读取、删除、插入。 删除数据称作：出栈或退栈 插入数据称作">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img.cdn1.vip/i/6989621ef275d_1770611230.webp">
+<meta property="og:image" content="https://img.cdn1.vip/i/698962248ce66_1770611236.webp">
+<meta property="og:image" content="https://img.cdn1.vip/i/6989621e87292_1770611230.png">
+<meta property="og:image" content="https://img.cdn1.vip/i/69895fa2b6b67_1770610594.png">
+<meta property="article:published_time" content="2024-04-22T08:48:23.000Z">
+<meta property="article:modified_time" content="2026-02-09T05:05:00.000Z">
+<meta property="article:author" content="ee268">
+<meta property="article:tag" content="c语言">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.cdn1.vip/i/6989621ef275d_1770611230.webp">
+    <link rel="alternate" href="/atom.xml" title="ee268的个人博客" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <img src="/images/load.jpg" alt="loading" />
+      </div>
+      <div class="loading-word">Loading...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation">
+        <a class="main-nav-link-wrap" href="/en/">
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/home.webp" alt="home icon" style="height: 1em;">
+            </div>
+          <span class="main-nav-link">Home</span>
+        </span>
+        <a class="main-nav-link-wrap" href="/en/archives">
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/archive.webp" alt="archives icon" style="height: 1em;">
+            </div>
+          <span class="main-nav-link">Archives</span>
+        </span>
+        <a class="main-nav-link-wrap" href="/en/about">
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/about.webp" alt="about icon" style="height: 1em;">
+            </div>
+          <span class="main-nav-link">About</span>
+        </span>
+        <a class="main-nav-link-wrap" href="/en/friend">
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/friend.webp" alt="friend icon" style="height: 1em;">
+            </div>
+          <span class="main-nav-link">Friend</span>
+        </span>
+    <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+    <!--      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed" target="_blank"></a>
+-->
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search" aria-label="Search"></a>
+  </nav>
+    <nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">English</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages">
+            <li data-value="zh-CN" role="option" aria-selected="false">简体中文</li>
+            <li data-value="en" role="option" class="selected" aria-selected="true">English</li>
+        </ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};
+              langMap['zh-CN'] = '/2024/04/22/栈实现C语言/';
+              langMap['en'] = '/en/2024/04/22/栈实现C语言/';
+            selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav>
+</div>
+<header id="header" aria-label="Site header">
+    <picture></picture>
+    <img  fetchpriority="high" src="https://img.cdn1.vip/i/6989621ef275d_1770611230.webp" alt="C语言实现 - 栈">
+  <div id="header-outer">
+    <div id="header-title">
+          <span id="logo">
+            <h1 data-aos="slide-up">C语言实现 - 栈</h1>
+          </span>
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+        </h2>
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content"  class="sidebar-right" >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text"> 栈的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E6%A0%88%E5%8A%A8%E5%9B%BE%E6%BC%94%E7%A4%BA"><span class="toc-number">1.2.</span> <span class="toc-text"> </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E9%9C%80%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="toc-number">2.</span> <span class="toc-text"> 一、需要实现的接口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text"> 二、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E5%88%9B%E5%BB%BA%E6%A0%88"><span class="toc-number">3.1.</span> <span class="toc-text"> 1.创建栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E5%90%84%E6%8E%A5%E5%8F%A3%E5%88%9B%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text"> 2.各接口创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%A0%88"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 1- 初始化栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%94%80%E6%AF%81%E6%A0%88"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 2 - 销毁栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%A5%E6%A0%88"><span class="toc-number">3.2.3.</span> <span class="toc-text"> 3 - 入栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%87%BA%E6%A0%88"><span class="toc-number">3.2.4.</span> <span class="toc-text"> 4 - 出栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8F%96%E5%87%BA%E6%A0%88%E9%A1%B6%E6%95%B0%E6%8D%AE"><span class="toc-number">3.2.5.</span> <span class="toc-text"> 5 -  取出栈顶数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%AE%A1%E7%AE%97%E6%A0%88%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="toc-number">3.2.6.</span> <span class="toc-text"> 6 - 计算栈的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%A0%88%E7%9A%84%E5%88%A4%E7%A9%BA"><span class="toc-number">3.2.7.</span> <span class="toc-text"> 7 - 栈的判空</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E6%B5%8B%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text"> 三、测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">5.</span> <span class="toc-text"> 五、运行结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text"> 总结</span></a></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="ee268" class="lazyload">
+  <div class="sidebar-author-name">ee268</div>
+  <div class="sidebar-description">我的博客</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">2</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">5</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/ee268 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-bilibili sidebar-social-icon">
+      <a href=https://space.bilibili.com/280055906 itemprop="url" target="_blank" aria-label="bilibili" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/home.webp" alt="home icon" style="width: 1em;">
+          </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/archive.webp" alt="archives icon" style="width: 1em;">
+          </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/about.webp" alt="about icon" style="width: 1em;">
+          </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/friend.webp" alt="friend icon" style="width: 1em;">
+          </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-栈实现C语言" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2024-04-22T08:48:23.000Z" itemprop="datePublished">2024-04-22</time>
+    <time style="display: none;" id="post-update-time">2026-02-09</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <p><ul class="markdownIt-TOC">
+<li><a href="#%E6%A0%88%E7%9A%84%E4%BB%8B%E7%BB%8D">栈的介绍</a></li>
+<li><a href="#%E5%85%A5%E6%A0%88%E5%8A%A8%E5%9B%BE%E6%BC%94%E7%A4%BA">!入栈动图演示</a></li>
+<li><a href="#1%E5%88%9B%E5%BB%BA%E6%A0%88">1.创建栈</a></li>
+<li><a href="#2%E5%90%84%E6%8E%A5%E5%8F%A3%E5%88%9B%E5%BB%BA">2.各接口创建</a>
+<ul>
+<li><a href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%A0%88">1- 初始化栈</a></li>
+<li><a href="#2-%E9%94%80%E6%AF%81%E6%A0%88">2 - 销毁栈</a></li>
+<li><a href="#3-%E5%85%A5%E6%A0%88">3 - 入栈</a></li>
+<li><a href="#4-%E5%87%BA%E6%A0%88">4 - 出栈</a></li>
+<li><a href="#5-%E5%8F%96%E5%87%BA%E6%A0%88%E9%A1%B6%E6%95%B0%E6%8D%AE">5 -  取出栈顶数据</a></li>
+<li><a href="#6-%E8%AE%A1%E7%AE%97%E6%A0%88%E7%9A%84%E5%A4%A7%E5%B0%8F">6 - 计算栈的大小</a></li>
+<li><a href="#7-%E6%A0%88%E7%9A%84%E5%88%A4%E7%A9%BA">7 - 栈的判空</a></li>
+</ul>
+</li>
+</ul>
+(文章目录)</p>
+<hr />
+<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<h2 id="栈的介绍"><a class="markdownIt-Anchor" href="#栈的介绍"></a> 栈的介绍</h2>
+<p>栈是一种特殊的线性表，数据的存取方式是<font color=red >后进先出</font>，最后进入的数据称为栈顶，第一个进入的数据称为栈底。只能在栈顶对数据进行读取、删除、插入。<br />
+<mark>删除数据称作：出栈或退栈</mark><br />
+<mark>插入数据称作：进栈、入栈或压栈</mark><br />
+<img src="https://img.cdn1.vip/i/6989621ef275d_1770611230.webp" alt="出栈动图演示" /></p>
+<h2 id="入栈动图演示"><a class="markdownIt-Anchor" href="#入栈动图演示"></a> <img src="https://img.cdn1.vip/i/698962248ce66_1770611236.webp" alt="入栈动图演示" /></h2>
+<h1 id="一-需要实现的接口"><a class="markdownIt-Anchor" href="#一-需要实现的接口"></a> 一、需要实现的接口</h1>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StackInit</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//销毁栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StackDestroy</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//入栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StackPush</span><span class="params">(<span class="built_in">stack</span>* p, StackDataType x)</span>;</span><br><span class="line"><span class="comment">//出栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StackPop</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//取出栈顶数据</span></span><br><span class="line">StackDataType <span class="title function_">StackTop</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//计算栈的大小</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">StackSize</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//栈的判空</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">StackEmpty</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="二-代码实现"><a class="markdownIt-Anchor" href="#二-代码实现"></a> 二、代码实现</h1>
+<h2 id="1创建栈"><a class="markdownIt-Anchor" href="#1创建栈"></a> 1.创建栈</h2>
+<p><code>栈可以使用数组或链表实现，这里使用的是数组</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> StackDataType;<span class="comment">//栈中存储的数据为整型</span></span><br><span class="line"><span class="comment">//将其重命名的意义是方便以后更改数据类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Stack</span> &#123;</span></span><br><span class="line">	StackDataType* vals;</span><br><span class="line">	<span class="type">int</span> top;<span class="comment">//栈顶的下标</span></span><br><span class="line">	<span class="type">int</span> capacity;<span class="comment">//记录数组的容量，到达上限时扩容</span></span><br><span class="line">&#125;<span class="built_in">stack</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="2各接口创建"><a class="markdownIt-Anchor" href="#2各接口创建"></a> 2.各接口创建</h2>
+<h3 id="1-初始化栈"><a class="markdownIt-Anchor" href="#1-初始化栈"></a> 1- 初始化栈</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">StackInit</span><span class="params">(<span class="built_in">stack</span>* p)</span> &#123;</span><br><span class="line">	assert(p);<span class="comment">//使用断言防止p为空指针，可以更好的找到错误</span></span><br><span class="line"></span><br><span class="line">	p-&gt;vals = (StackDataType*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(StackDataType) * <span class="number">4</span>);</span><br><span class="line">	p-&gt;capacity = <span class="number">4</span>;</span><br><span class="line">	<span class="comment">//设置数组的初始大小为4</span></span><br><span class="line">	p-&gt;top = <span class="number">0</span>;<span class="comment">//此时栈顶为0，无任何数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-销毁栈"><a class="markdownIt-Anchor" href="#2-销毁栈"></a> 2 - 销毁栈</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">StackDestroy</span><span class="params">(<span class="built_in">stack</span>* p)</span> &#123;</span><br><span class="line">	assert(p);<span class="comment">//使用断言防止p为空指针，可以更好的找到错误</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">free</span>(p-&gt;vals);<span class="comment">//释放栈中的所有值</span></span><br><span class="line">	p-&gt;vals = <span class="literal">NULL</span>;<span class="comment">//置成空指针防止野指针的出现</span></span><br><span class="line">	p-&gt;capacity = p-&gt;top = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-入栈"><a class="markdownIt-Anchor" href="#3-入栈"></a> 3 - 入栈</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">StackPush</span><span class="params">(<span class="built_in">stack</span>* p, StackDataType x)</span> &#123;</span><br><span class="line">	assert(p);<span class="comment">//使用断言防止p为空指针，可以更好的找到错误</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (p-&gt;top == p-&gt;capacity) &#123;<span class="comment">//栈顶如果等于容量就代表栈已经满了，需要扩容</span></span><br><span class="line">		StackDataType* tmp = (StackDataType*)<span class="built_in">realloc</span>(p-&gt;vals, <span class="keyword">sizeof</span>(StackDataType) * (p-&gt;capacity * <span class="number">2</span>));</span><br><span class="line">		<span class="comment">//这里扩容为原容量的二倍</span></span><br><span class="line">		<span class="keyword">if</span> (tmp) &#123;</span><br><span class="line">			p-&gt;capacity *= <span class="number">2</span>;</span><br><span class="line">			p-&gt;vals = tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;<span class="comment">//若有扩容失败的情况就强制终止程序</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;realloc fail!\n&quot;</span>);</span><br><span class="line">			<span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	p-&gt;vals[p-&gt;top] = x;<span class="comment">//将x插入栈顶</span></span><br><span class="line">	p-&gt;top++;<span class="comment">//栈顶为p-&gt;top - 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-出栈"><a class="markdownIt-Anchor" href="#4-出栈"></a> 4 - 出栈</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">StackPop</span><span class="params">(<span class="built_in">stack</span>* p)</span> &#123;</span><br><span class="line">	assert(p);<span class="comment">//使用断言防止p为空指针，可以更好的找到错误</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (p-&gt;top &gt; <span class="number">0</span>) &#123;<span class="comment">//要保证栈中至少存在一个数据才能出栈</span></span><br><span class="line">		p-&gt;top--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;<span class="comment">//无数据就强制终止程序</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;stack no data\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-取出栈顶数据"><a class="markdownIt-Anchor" href="#5-取出栈顶数据"></a> 5 -  取出栈顶数据</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">StackDataType <span class="title function_">StackTop</span><span class="params">(<span class="built_in">stack</span>* p)</span> &#123;</span><br><span class="line">	assert(p);<span class="comment">//使用断言防止p为空指针，可以更好的找到错误</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (p-&gt;top == <span class="number">0</span>) &#123;<span class="comment">//栈中无数据，强制终止程序</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;stack no data\n&quot;</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> p-&gt;vals[p-&gt;top - <span class="number">1</span>];<span class="comment">//返回栈顶数据</span></span><br><span class="line">		<span class="comment">//这里因为初始化栈时p-&gt;top赋的初始值为0，入栈时将p-&gt;top++，所以栈顶数据是当前p-&gt;top所指向的后一位</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-计算栈的大小"><a class="markdownIt-Anchor" href="#6-计算栈的大小"></a> 6 - 计算栈的大小</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">StackSize</span><span class="params">(<span class="built_in">stack</span>* p)</span> &#123;</span><br><span class="line">	assert(p);<span class="comment">//使用断言防止p为空指针，可以更好的找到错误</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> p-&gt;top;<span class="comment">//初始从0开始，栈顶是p-&gt;top的后一位，所以当前p-&gt;top的值就是栈的数据个数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-栈的判空"><a class="markdownIt-Anchor" href="#7-栈的判空"></a> 7 - 栈的判空</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">StackEmpty</span><span class="params">(<span class="built_in">stack</span>* p)</span> &#123;</span><br><span class="line">	assert(p);<span class="comment">//使用断言防止p为空指针，可以更好的找到错误</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> p-&gt;top == <span class="number">0</span>;<span class="comment">//若栈顶为0则代表栈中无数据，返回true</span></span><br><span class="line">	<span class="comment">//栈顶不为0代表栈不为空，返回false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三-测试"><a class="markdownIt-Anchor" href="#三-测试"></a> 三、测试</h1>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">stacktest1</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="built_in">stack</span> p;<span class="comment">//不需要赋值，使用StackInit</span></span><br><span class="line">	StackInit(&amp;p);<span class="comment">//传参需要传地址</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//依次入数据 </span></span><br><span class="line">	StackPush(&amp;p, <span class="number">1</span>);</span><br><span class="line">	StackPush(&amp;p, <span class="number">2</span>);</span><br><span class="line">	StackPush(&amp;p, <span class="number">3</span>);</span><br><span class="line">	StackPush(&amp;p, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//一共入了四个数据</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;StackSize = %d\n&quot;</span>, StackSize(&amp;p));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (!StackEmpty(&amp;p)) &#123;</span><br><span class="line">	<span class="comment">//使用逻辑非运算符（非0为假，0为真），栈不为空时继续，为空时停止</span></span><br><span class="line">	<span class="comment">//因为栈为空返回true，不为空返回false</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, StackTop(&amp;p));<span class="comment">//取出栈顶数据并输出</span></span><br><span class="line">		StackPop(&amp;p);<span class="comment">//输出完之后将栈顶移除</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	StackDestroy(&amp;p);<span class="comment">//栈使用完毕需要销毁，防止内存泄漏</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	stacktest1();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="五-运行结果"><a class="markdownIt-Anchor" href="#五-运行结果"></a> 五、运行结果</h1>
+<p><img src="https://img.cdn1.vip/i/6989621e87292_1770611230.png" alt="在这里插入图片描述" /><br />
+栈的大小为4，输出的顺序满足了后进先出</p>
+<p><mark>栈的应用（迷宫问题）：</mark></p>
+<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://ee268.github.io/2024/04/22/牛客网迷宫问题C语言/" title="迷宫问题c语言" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap"><img src="https://img.cdn1.vip/i/69895fa2b6b67_1770610594.png" class="no-lightbox" title="迷宫问题c语言" alt="迷宫问题c语言"/></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">迷宫问题c语言</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://ee268.github.io/2024/04/22/牛客网迷宫问题C语言/</div>
+			</div>
+		</div>
+	</div>
+<p><a target="_blank" rel="noopener" href="http://t.csdnimg.cn/cdkD5">http://t.csdnimg.cn/cdkD5</a></p>
+<hr />
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<p>第一次写博客，不足之处还请大家指出🥺。</p>
+<hr />
+<p>以前自己在csdn写的，新搭的博客没有多少文章，搬上来凑数</p>
+<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://blog.csdn.net/ee268/article/details/137997577?fromshare=blogdetail&sharetype=blogdetail&sharerId=137997577&sharerefer=PC&sharesource=ee268&sharefrom=from_link" title="C语言实现 - 栈" rel="noopener nofollow noreferrer" target="_blank"></a>
+			
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">C语言实现 - 栈</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://blog.csdn.net/ee268/article/details/137997577?fromshare=blogdetail&sharetype=blogdetail&sharerId=137997577&sharerefer=PC&sharesource=ee268&sharefrom=from_link</div>
+			</div>
+		</div>
+	</div>
+
+    </div>
+    <footer class="article-footer">
+        <blockquote class="article-copyright">
+    <p><strong><span class="icon-user icon"></span>Author: </strong>ee268</p>
+    <p><strong><span class="icon-link icon"></span>Permalink: </strong><a href="http://example.com/en/2024/04/22/%E6%A0%88%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80/">http://example.com/en/2024/04/22/%E6%A0%88%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80/</a></p>
+    
+    
+    
+    <p><strong><span class="icon-copyright icon"></span>License: </strong>All articles on this blog are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> license agreement unless otherwise stated. Please indicate the source when reprinting!</p>
+    <span class="icon-creative-commons article-copyright-bg"></span>
+  </blockquote>
+        <a class="article-category-link" href="/en/categories/C/" title="C" data-aos="zoom-in">C</a>
+
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/en/tags/c%E8%AF%AD%E8%A8%80/" rel="tag" title="c语言">c语言</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/en/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag" title="数据结构">数据结构</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+            <img data-src="/images/cover/1.jpg" data-sizes="auto" alt="vs2022配置protobuf" class="lazyload">
+        <a href="/en/2025/09/08/vs2022%E9%85%8D%E7%BD%AEprotobuf/" aria-label="Prev: vs2022配置protobuf" title="Prev: vs2022配置protobuf"></a>
+        <div class="article-nav-caption">Prev</div>
+        <h3 class="article-nav-title">
+            vs2022配置protobuf
+        </h3>
+      </div>
+    <div class="article-nav-link-wrap right">
+        <img data-src="https://img.cdn1.vip/i/69895fa2b6b67_1770610594.png" data-sizes="auto" alt="牛客网 - 迷宫问题（C语言）" class="lazyload">
+      <a href="/en/2024/04/22/%E7%89%9B%E5%AE%A2%E7%BD%91%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98C%E8%AF%AD%E8%A8%80/" aria-label="Next: 牛客网 - 迷宫问题（C语言）"  title="Next: 牛客网 - 迷宫问题（C语言）"></a>
+      <div class="article-nav-caption">Next</div>
+      <h3 class="article-nav-title">
+          牛客网 - 迷宫问题（C语言）
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2026
+        <span class="footer-info-sep rotate"></span>
+      ee268
+    </div>
+      <div>
+        Powered by&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        3.5k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        00:18
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text"> 栈的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E6%A0%88%E5%8A%A8%E5%9B%BE%E6%BC%94%E7%A4%BA"><span class="toc-number">1.2.</span> <span class="toc-text"> </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E9%9C%80%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="toc-number">2.</span> <span class="toc-text"> 一、需要实现的接口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text"> 二、代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E5%88%9B%E5%BB%BA%E6%A0%88"><span class="toc-number">3.1.</span> <span class="toc-text"> 1.创建栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E5%90%84%E6%8E%A5%E5%8F%A3%E5%88%9B%E5%BB%BA"><span class="toc-number">3.2.</span> <span class="toc-text"> 2.各接口创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%A0%88"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 1- 初始化栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%94%80%E6%AF%81%E6%A0%88"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 2 - 销毁栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%A5%E6%A0%88"><span class="toc-number">3.2.3.</span> <span class="toc-text"> 3 - 入栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%87%BA%E6%A0%88"><span class="toc-number">3.2.4.</span> <span class="toc-text"> 4 - 出栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8F%96%E5%87%BA%E6%A0%88%E9%A1%B6%E6%95%B0%E6%8D%AE"><span class="toc-number">3.2.5.</span> <span class="toc-text"> 5 -  取出栈顶数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%AE%A1%E7%AE%97%E6%A0%88%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="toc-number">3.2.6.</span> <span class="toc-text"> 6 - 计算栈的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%A0%88%E7%9A%84%E5%88%A4%E7%A9%BA"><span class="toc-number">3.2.7.</span> <span class="toc-text"> 7 - 栈的判空</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E6%B5%8B%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text"> 三、测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">5.</span> <span class="toc-text"> 五、运行结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text"> 总结</span></a></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="ee268" class="lazyload">
+  <div class="sidebar-author-name">ee268</div>
+  <div class="sidebar-description">我的博客</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">2</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">5</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/ee268 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-bilibili sidebar-social-icon">
+      <a href=https://space.bilibili.com/280055906 itemprop="url" target="_blank" aria-label="bilibili" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/home.webp" alt="home icon" style="width: 1em;">
+          </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/archive.webp" alt="archives icon" style="width: 1em;">
+          </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/about.webp" alt="about icon" style="width: 1em;">
+          </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/friend.webp" alt="friend icon" style="width: 1em;">
+          </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png"/>
+        </div>
+      </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+  
+<script src="/js/generator_search.js" defer></script>
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js" integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8+pUoWX8n1rgq282T" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "ee268",
+          title: "C语言实现 - 栈",
+          url: "http://example.com/2024/04/22/%E6%A0%88%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80/",
+          excerpt: "",
+          description: "",
+          stripContent: " 栈的介绍 !入栈动图演示 1.创建栈 2.各接口创建  1- 初始化栈 2 - 销毁栈 3 - 入栈 4 - 出栈 5 -  取出栈顶数据 6 - 计算栈的大小 7 - 栈的判空    (文章目录)   前言  栈的介绍 栈是一种特殊的线性表，数据的存取方式是后进先出，最后进入的数据称为栈顶，第一个进入的数据称为栈底。只能在栈顶对数据进行读取、删除、插入。 删除数据称作：出栈或退栈 插入数据称作：进栈、入栈或压栈     一、需要实现的接口 1234567891011121314//初始化栈v",
+          date: "Mon Apr 22 2024 16:48:23 GMT+0800",
+          updated: "Mon Feb 09 2026 13:05:00 GMT+0800",
+          cover: "https://img.cdn1.vip/i/6989621ef275d_1770611230.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+
+
+
+  </body>
+  </html>

@@ -1,12 +1,12 @@
 :root {
-  --red-0: #ff0000;
-  --red-1: #ff5252;
-  --red-2: #ff7c7c;
-  --red-3: #ffafaf;
-  --red-4: #ffd0d0;
-  --red-5: #ffecec;
-  --red-5-5: #fff3f3;
-  --red-6: #fff7f7;
+  --red-0: #ff6600;
+  --red-1: #ff8533;
+  --red-2: #ffa366;
+  --red-3: #ffc299;
+  --red-4: #ffe0cc;
+  --red-5: #fff2e6;
+  --red-5-5: #fff9f5;
+  --red-6: #fffcf9;
   --grey-9: #888;
   --grey-7: var(--color-default);
   --color-archive-year: #000;
@@ -24,31 +24,31 @@
   --color-meta-shadow: var(--red-6);
   --color-hover-shadow: rgba(120,120,120,0.15);
   --color-h2-after: var(--red-1);
-  --color-red-6-shadow: rgba(255, 78, 78, 0.6);
-  --color-red-3-shadow: rgba(255, 78, 78, 0.3);
-  --highlight-nav: #f5f5f5;
-  --highlight-scrollbar: #d6d6d6;
-  --highlight-background: #fdfdfd;
-  --highlight-selection: #e9e9e988;
-  --highlight-foreground: #24292e;
-  --highlight-comment: #7d7d7d;
-  --highlight-red: #d73a49;
-  --highlight-orange: #e36209;
-  --highlight-yellow: #cb911d;
-  --highlight-green: #22863a;
-  --highlight-aqua: #005cc5;
-  --highlight-blue: #032f62;
-  --highlight-purple: #6f42c1;
-  --highlight-deletion: #b31d28;
-  --highlight-deletion-bg: #ffeef0;
-  --highlight-addition: #22863a;
-  --highlight-addition-bg: #f0fff4;
+  --color-red-6-shadow: rgba(255, 102, 0, 0.4);
+  --color-red-3-shadow: rgba(255, 102, 0, 0.2);
+  --highlight-nav: #f8f8f7;
+  --highlight-scrollbar: #e0e0e0;
+  --highlight-background: #ffffff;
+  --highlight-selection: #ffcc0033;
+  --highlight-foreground: #2c3e50;
+  --highlight-comment: #99a2aa;
+  --highlight-red: #e65100;
+  --highlight-orange: #fb8c00;
+  --highlight-yellow: #fbc02d;
+  --highlight-green: #43a047;
+  --highlight-aqua: #00acc1;
+  --highlight-blue: #1e88e5;
+  --highlight-purple: #8e24aa;
+  --highlight-deletion: #bf360c;
+  --highlight-deletion-bg: #fbe9e7;
+  --highlight-addition: #2e7d32;
+  --highlight-addition-bg: #f1f8e9;
   --cursor-default: url("../images/cursor/reimu-cursor-default.png"), auto;
   --cursor-pointer: url("../images/cursor/reimu-cursor-pointer.png"), pointer;
   --cursor-text: url("../images/cursor/reimu-cursor-text.png"), text;
-  --footer-icon: url("../images/taichi.png");
-  --sponsor-icon: url("../images/taichi.png");
-  --top-icon: url("../images/taichi.png");
+  --footer-icon: url("../images/load.jpg");
+  --sponsor-icon: url("../images/taichi.svg");
+  --top-icon: url("../images/icon/top.webp");
   --shadow-meta: 0 0 5px 2px var(--color-meta-shadow);
   --shadow-meta-hover: 0 0 6px 4px var(--color-meta-shadow);
   --shadow-card: 0 0 10px 2px var(--color-hover-shadow);
@@ -57,10 +57,10 @@
 }
 [data-theme='dark']:root {
   --red-0: var(--red-1);
-  --red-4: rgba(255, 208, 208, 0.5);
-  --red-5: rgba(255,228,228,0.15);
-  --red-5-5: rgba(255,236,236,0.05);
-  --red-6: rgba(255, 243, 243, 0.2);
+  --red-4: rgba(255, 167, 38, 0.4);
+  --red-5: rgba(255, 167, 38, 0.15);
+  --red-5-5: rgba(255, 167, 38, 0.05);
+  --red-6: rgba(255, 167, 38, 0.1);
   --color-archive-year: #999;
   --color-default: #999;
   --color-border: var(--red-5);
@@ -73,22 +73,22 @@
   --color-h2-border: #47474a;
   --color-meta-shadow: rgba(0,0,0,0.2);
   --color-hover-shadow: rgba(0,0,0,0.2);
-  --highlight-nav: #222830;
-  --highlight-scrollbar: #454d59;
-  --highlight-background: #1e2027;
-  --highlight-selection: #51515155;
-  --highlight-foreground: #c9d1d9;
+  --highlight-nav: #24292e;
+  --highlight-scrollbar: #4b525d;
+  --highlight-background: #1c1e21;
+  --highlight-selection: #ff980033;
+  --highlight-foreground: #e1e4e8;
   --highlight-comment: #8b949e;
   --highlight-red: #ff7b72;
   --highlight-orange: #ffa657;
   --highlight-yellow: #ffcc66;
-  --highlight-green: #7ee787;
-  --highlight-aqua: #a5d6ff;
-  --highlight-blue: #79c0ff;
-  --highlight-purple: #d2a8ff;
-  --highlight-deletion: #ffa198;
-  --highlight-deletion-bg: #490202;
-  --highlight-addition: #7ee787;
+  --highlight-green: #85e89d;
+  --highlight-aqua: #79c0ff;
+  --highlight-blue: #2188ff;
+  --highlight-purple: #b392f0;
+  --highlight-deletion: #ffab70;
+  --highlight-deletion-bg: #4b1e00;
+  --highlight-addition: #85e89d;
   --highlight-addition-bg: #04260f;
 }
 [data-theme='dark']:root img {
@@ -389,6 +389,9 @@ body [data-aos='zoom-in'] {
 .icon-github:before {
   content: '\e619';
 }
+.icon-bilibili:before {
+  content: '\e603';
+}
 .sidebar-toc-btn:before {
   font-family: 'iconfont';
   content: '\e633';
@@ -546,7 +549,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
-  font-family: 'Mulish','Noto Serif SC', '-apple-system','PingFang SC','Microsoft YaHei','sans-serif';
+  font-family: 'LXGW WenKai', 'Mulish','Noto Serif SC', '-apple-system','PingFang SC','Microsoft YaHei','sans-serif';
   transition: background 1s;
   text-autospace: normal;
   color: var(--color-default);
@@ -1983,22 +1986,46 @@ button {
 .footer-info-sep.rotate {
   animation: rotate-all 3s linear infinite;
 }
-@supports (-webkit-mask: var(--footer-icon) no-repeat center/80%) {
-  .footer-info-sep {
-    background-color: var(--red-1);
-    -webkit-mask: var(--footer-icon) no-repeat center/80%;
-  }
+.footer-info-sep {
+  background: var(--footer-icon) no-repeat center/80%;
 }
-@supports (mask: var(--footer-icon) no-repeat center/80%) {
-  .footer-info-sep {
-    background-color: var(--red-1);
-    mask: var(--footer-icon) no-repeat center/80%;
-  }
+.article-copyright {
+  background: var(--red-5-5);
+  border-left: 6px var(--red-4) solid;
+  margin: 24px 0;
+  border-radius: 12px;
+  transition: 0.3s;
+  padding: 6px 10px;
+  box-shadow: var(--shadow-meta);
+  position: relative;
+  overflow: hidden;
+  word-break: break-all;
 }
-@supports not ((mask: var(--footer-icon) no-repeat center/80%) and (-webkit-mask: var(--footer-icon) no-repeat center/80%)) {
-  .footer-info-sep {
-    background: var(--footer-icon) no-repeat center/80%;
-  }
+.article-copyright .icon {
+  margin: 0 4px;
+}
+.article-copyright p {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--color-default);
+}
+.article-copyright p strong {
+  font-weight: 700;
+}
+.article-copyright a {
+  color: var(--color-default);
+  text-decoration: none;
+}
+.article-copyright a:hover {
+  text-decoration: underline;
+}
+.article-copyright-bg {
+  font-size: 120px;
+  color: var(--red-3);
+  opacity: 0.2;
+  position: absolute;
+  right: -15px;
+  bottom: -40px;
 }
 @media screen and (min-width: 960px) {
   #mobile-nav {
@@ -2187,7 +2214,7 @@ button {
 .article-entry .gist .gist-file .gist-meta {
   background: var(--highlight-background);
   color: var(--highlight-comment);
-  font: 0.85em  'Mulish','Noto Serif SC', '-apple-system','PingFang SC','Microsoft YaHei','sans-serif';
+  font: 0.85em 'LXGW WenKai', 'Mulish','Noto Serif SC', '-apple-system','PingFang SC','Microsoft YaHei','sans-serif';
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
@@ -2665,22 +2692,8 @@ pre .emphasis {
     opacity: 1;
   }
 }
-@supports (-webkit-mask: var(--top-icon) no-repeat center/100%) {
-  .sidebar-top-taichi {
-    background-color: var(--red-1);
-    -webkit-mask: var(--top-icon) no-repeat center/100%;
-  }
-}
-@supports (mask: var(--top-icon) no-repeat center/100%) {
-  .sidebar-top-taichi {
-    background-color: var(--red-1);
-    mask: var(--top-icon) no-repeat center/100%;
-  }
-}
-@supports not ((mask: var(--top-icon) no-repeat center/100%) and (-webkit-mask: var(--top-icon) no-repeat center/100%)) {
-  .sidebar-top-taichi {
-    background: var(--top-icon) no-repeat center/100%;
-  }
+.sidebar-top-taichi {
+  background: var(--top-icon) no-repeat center/100%;
 }
 .tagcloud a {
   display: inline-block;
@@ -2848,7 +2861,7 @@ pre .emphasis {
   color: var(--grey-9);
   font-size: 16px;
   vertical-align: middle;
-  font-family: 'Mulish','Noto Serif SC', '-apple-system','PingFang SC','Microsoft YaHei','sans-serif';
+  font-family: 'LXGW WenKai', 'Mulish','Noto Serif SC', '-apple-system','PingFang SC','Microsoft YaHei','sans-serif';
 }
 #reimu-search-input input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -3123,6 +3136,9 @@ pre .emphasis {
 }
 [data-theme='dark'] .icon-github {
   color: #bc88ff;
+}
+.icon-bilibili {
+  color: #00a1d6;
 }
 .sidebar-menu-icon,
 .sidebar-menu-link {

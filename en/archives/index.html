@@ -12,6 +12,7 @@
     Archives | ee268的个人博客
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preload" as="style" href="https://fontsapi.zeoseven.com/292/main/result.css" onload="this.rel='stylesheet'" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
     <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     
@@ -48,11 +49,7 @@
     <div class="loading-right-bg loading-bg"></div>
     <div class="spinner-box">
       <div class="loading-taichi rotate">
-          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
-            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
-            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
-           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
-          </svg>
+          <img src="/images/load.jpg" alt="loading" />
       </div>
       <div class="loading-word">Loading...</div>
     </div>
@@ -95,33 +92,34 @@
         <div id="header-nav">
   <nav id="main-nav" aria-label="Primary navigation">
         <a class="main-nav-link-wrap" href="/en/">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/home.webp" alt="home icon" style="height: 1em;">
             </div>
           <span class="main-nav-link">Home</span>
         </span>
         <a class="main-nav-link-wrap" href="/en/archives">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/archive.webp" alt="archives icon" style="height: 1em;">
             </div>
           <span class="main-nav-link">Archives</span>
         </span>
         <a class="main-nav-link-wrap" href="/en/about">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/about.webp" alt="about icon" style="height: 1em;">
             </div>
           <span class="main-nav-link">About</span>
         </span>
         <a class="main-nav-link-wrap" href="/en/friend">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/friend.webp" alt="friend icon" style="height: 1em;">
             </div>
           <span class="main-nav-link">Friend</span>
         </span>
     <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
   <nav id="sub-nav" aria-label="Secondary navigation">
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed" target="_blank"></a>
+    <!--      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed" target="_blank"></a>
+-->
       <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search" aria-label="Search"></a>
   </nav>
     <nav id="i18n-nav" aria-label="Language selection">
@@ -174,7 +172,7 @@
 <header id="header" aria-label="Site header">
       <picture>
       </picture>
-        <img  fetchpriority="high" src="/images/banner.webp" alt="">
+        <img  fetchpriority="high" src="/images/banner.jpg" alt="">
   <div id="header-outer">
     <div id="header-title">
           <span id="logo">
@@ -199,15 +197,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Post</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-category">
     <div>Category</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
   <div class="sidebar-state-tag">
     <div>Tag</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">5</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -221,29 +219,29 @@
 <div class="sidebar-menu">
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/home.webp" alt="home icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">Home</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/archive.webp" alt="archives icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">Archives</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/about.webp" alt="about icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">About</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/friend.webp" alt="friend icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">Friend</div>
       </div>
@@ -256,7 +254,7 @@
     <div class="widget-wrap" data-aos="fade-up">
       <h3 class="widget-title">Categories</h3>
       <div class="widget">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/en/categories/C/" title="C">C</a></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/en/categories/C/" title="C">C</a></li><li class="category-list-item"><a class="category-list-link" href="/en/categories/Cpp/" title="Cpp">Cpp</a></li></ul>
       </div>
     </div>
   </div>
@@ -265,7 +263,7 @@
     <div class="widget-wrap" data-aos="fade-up">
       <h3 class="widget-title">Tag Cloud</h3>
       <div class="widget tagcloud">
-        <a href="/en/tags/c%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">c语言</a> <a href="/en/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/en/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">深度优先搜索</a>
+        <a href="/en/tags/VistualStudio/" style="font-size: 10px;">VistualStudio</a> <a href="/en/tags/c/" style="font-size: 10px;">c++</a> <a href="/en/tags/c%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">c语言</a> <a href="/en/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 20px;">数据结构</a> <a href="/en/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">深度优先搜索</a>
       </div>
     </div>
   </div>
@@ -275,6 +273,12 @@
       <h3 class="widget-title">Recent Posts</h3>
       <div class="widget">
         <ul>
+            <li>
+              <a href="/en/2025/09/08/vs2022%E9%85%8D%E7%BD%AEprotobuf/" title="vs2022配置protobuf">vs2022配置protobuf</a>
+            </li>
+            <li>
+              <a href="/en/2024/04/22/%E6%A0%88%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80/" title="C语言实现 - 栈">C语言实现 - 栈</a>
+            </li>
             <li>
               <a href="/en/2024/04/22/%E7%89%9B%E5%AE%A2%E7%BD%91%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98C%E8%AF%AD%E8%A8%80/" title="牛客网 - 迷宫问题（C语言）">牛客网 - 迷宫问题（C语言）</a>
             </li>
@@ -290,6 +294,12 @@
           <section id="main" aria-label="Main content"><div class="archives-outer-wrap" data-aos="fade-up">
     <div class="tag-wrap">
     <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/en/tags/c/">c++</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/en/tags/VistualStudio/">VistualStudio</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
       <a class="archives-tag-list-link" href="/en/tags/c%E8%AF%AD%E8%A8%80/">c语言</a>
     </div>
     <div class="archives-tag-list-item" data-aos="zoom-in">
@@ -301,14 +311,41 @@
 </div>
 <div class="category-wrap">
     <div class="archives-category-list-item" data-aos="zoom-in">
+      <a class="archives-category-list-link" href="/en/categories/Cpp/">Cpp</a>
+    </div>
+    <div class="archives-category-list-item" data-aos="zoom-in">
       <a class="archives-category-list-link" href="/en/categories/C/">C</a>
     </div>
 </div>
         <section class="archives-wrap" data-aos="fade-up">
           <div class="archive-year-wrap">
+            <a href="/en/archives/2025" class="archive-year">2025</a>
+          </div>
+          <ul>
+            <li class="archive-article">
+  <div class="archive-article-date">
+    <span>
+      <time class="dt-published" datetime="2025-09-08T00:30:00.000Z" itemprop="datePublished">09-08</time>
+    </span>
+  </div>
+    <a class="archive-article-title" href="/en/2025/09/08/vs2022%E9%85%8D%E7%BD%AEprotobuf/">vs2022配置protobuf</a>
+</li>
+
+          </section>
+        <section class="archives-wrap" data-aos="fade-up">
+          <div class="archive-year-wrap">
             <a href="/en/archives/2024" class="archive-year">2024</a>
           </div>
           <ul>
+            <li class="archive-article">
+  <div class="archive-article-date">
+    <span>
+      <time class="dt-published" datetime="2024-04-22T08:48:23.000Z" itemprop="datePublished">04-22</time>
+    </span>
+  </div>
+    <a class="archive-article-title" href="/en/2024/04/22/%E6%A0%88%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80/">C语言实现 - 栈</a>
+</li>
+
             <li class="archive-article">
   <div class="archive-article-date">
     <span>
@@ -341,10 +378,10 @@
       </div>
       <div>
         <span class="icon-brush"></span>
-        1.6k
+        3.5k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:09
+        00:18
       </div>
       <div>
         <span class="icon-eye"></span>
@@ -372,15 +409,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Post</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-category">
     <div>Category</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
   <div class="sidebar-state-tag">
     <div>Tag</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">5</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -394,29 +431,29 @@
 <div class="sidebar-menu">
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/home.webp" alt="home icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">Home</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/archive.webp" alt="archives icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">Archives</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/about.webp" alt="about icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">About</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/friend.webp" alt="friend icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">Friend</div>
       </div>

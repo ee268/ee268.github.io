@@ -130,6 +130,9 @@
 .icon-github:before {
   content: '\e619';
 }
+.icon-bilibili:before {
+  content: '\e603';
+}
 .sidebar-toc-btn:before {
   font-family: 'iconfont';
   content: '\e633';

@@ -12,6 +12,7 @@
     牛客网 - 迷宫问题（C语言） | ee268的个人博客
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preload" as="style" href="https://fontsapi.zeoseven.com/292/main/result.css" onload="this.rel='stylesheet'" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
     <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     
@@ -28,7 +29,7 @@
 <meta property="og:image" content="https://img.cdn1.vip/i/6988ce8b4a236_1770573451.png">
 <meta property="og:image" content="https://img.cdn1.vip/i/6988ce9774d8a_1770573463.webp">
 <meta property="article:published_time" content="2024-04-22T08:45:38.000Z">
-<meta property="article:modified_time" content="2026-02-08T17:58:53.153Z">
+<meta property="article:modified_time" content="2026-02-07T17:30:00.000Z">
 <meta property="article:author" content="ee268">
 <meta property="article:tag" content="c语言">
 <meta property="article:tag" content="数据结构">
@@ -55,13 +56,9 @@
     <div class="loading-right-bg loading-bg"></div>
     <div class="spinner-box">
       <div class="loading-taichi rotate">
-          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
-            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
-            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
-           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
-          </svg>
+          <img src="/images/load.jpg" alt="loading" />
       </div>
-      <div class="loading-word">少女祈祷中...</div>
+      <div class="loading-word">请稍等...</div>
     </div>
   </div>
   </div>
@@ -102,33 +99,34 @@
         <div id="header-nav">
   <nav id="main-nav" aria-label="Primary navigation">
         <a class="main-nav-link-wrap" href="/">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/home.webp" alt="home icon" style="height: 1em;">
             </div>
           <span class="main-nav-link">首页</span>
         </span>
         <a class="main-nav-link-wrap" href="/archives">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/archive.webp" alt="archives icon" style="height: 1em;">
             </div>
           <span class="main-nav-link">归档</span>
         </span>
         <a class="main-nav-link-wrap" href="/about">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/about.webp" alt="about icon" style="height: 1em;">
             </div>
           <span class="main-nav-link">关于</span>
         </span>
         <a class="main-nav-link-wrap" href="/friend">
-            <div class="main-nav-icon icon rotate">
-                &#xe62b;
+            <div class="main-nav-icon icon ">
+                  <img src="/images/icon/friend.webp" alt="friend icon" style="height: 1em;">
             </div>
           <span class="main-nav-link">友链</span>
         </span>
     <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
   <nav id="sub-nav" aria-label="Secondary navigation">
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
+    <!--      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
+-->
       <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a>
   </nav>
     <nav id="i18n-nav" aria-label="Language selection">
@@ -179,9 +177,8 @@
     </nav>
 </div>
 <header id="header" aria-label="Site header">
-        <picture>
-        </picture>
-          <img  fetchpriority="high" src="/images/banner.webp" alt="牛客网 - 迷宫问题（C语言）">
+    <picture></picture>
+    <img  fetchpriority="high" src="https://img.cdn1.vip/i/69895fa2b6b67_1770610594.png" alt="牛客网 - 迷宫问题（C语言）">
   <div id="header-outer">
     <div id="header-title">
           <span id="logo">
@@ -211,15 +208,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">5</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -233,29 +230,29 @@
 <div class="sidebar-menu">
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/home.webp" alt="home icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">首页</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/archive.webp" alt="archives icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">归档</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/about.webp" alt="about icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">关于</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/friend.webp" alt="friend icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">友链</div>
       </div>
@@ -278,7 +275,7 @@
       <div class="article-date">
   <span class="article-date-link icon-calendar" data-aos="zoom-in">
     <time datetime="2024-04-22T08:45:38.000Z" itemprop="datePublished">2024-04-22</time>
-    <time style="display: none;" id="post-update-time">2026-02-09</time>
+    <time style="display: none;" id="post-update-time">2026-02-08</time>
   </span>
 </div>
 
@@ -334,13 +331,32 @@
 
     </div>
     <footer class="article-footer">
+        <blockquote class="article-copyright">
+    <p><strong><span class="icon-user icon"></span>本文作者：</strong>ee268</p>
+    <p><strong><span class="icon-link icon"></span>本文链接：</strong><a href="http://example.com/2024/04/22/%E7%89%9B%E5%AE%A2%E7%BD%91%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98C%E8%AF%AD%E8%A8%80/">http://example.com/2024/04/22/%E7%89%9B%E5%AE%A2%E7%BD%91%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98C%E8%AF%AD%E8%A8%80/</a></p>
+    
+    
+    
+    <p><strong><span class="icon-copyright icon"></span>本文版权：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> 许可协议。转载请注明出处！</p>
+    <span class="icon-creative-commons article-copyright-bg"></span>
+  </blockquote>
         <a class="article-category-link" href="/categories/C/" title="C" data-aos="zoom-in">C</a>
 
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/c%E8%AF%AD%E8%A8%80/" rel="tag" title="c语言">c语言</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag" title="数据结构">数据结构</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag" title="深度优先搜索">深度优先搜索</a></li></ul>
 
     </footer>
   </div>
-  
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+          <img data-src="https://img.cdn1.vip/i/6989621ef275d_1770611230.webp" data-sizes="auto" alt="C语言实现 - 栈" class="lazyload">
+        <a href="/2024/04/22/%E6%A0%88%E5%AE%9E%E7%8E%B0C%E8%AF%AD%E8%A8%80/" aria-label="前一篇: C语言实现 - 栈" title="前一篇: C语言实现 - 栈"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+            C语言实现 - 栈
+        </h3>
+      </div>
+  </nav>
+
 </article>
 
 
@@ -363,10 +379,10 @@
       </div>
       <div>
         <span class="icon-brush"></span>
-        1.6k
+        3.5k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:09
+        00:18
       </div>
       <div>
         <span class="icon-eye"></span>
@@ -399,15 +415,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">5</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -421,29 +437,29 @@
 <div class="sidebar-menu">
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/home.webp" alt="home icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">首页</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/archive.webp" alt="archives icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">归档</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/about.webp" alt="about icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">关于</div>
       </div>
       <div class="sidebar-menu-link-wrap">
         <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
-          <div class="sidebar-menu-icon icon rotate">
-              &#xe62b;
+          <div class="sidebar-menu-icon icon ">
+                <img src="/images/icon/friend.webp" alt="friend icon" style="width: 1em;">
           </div>
         <div class="sidebar-menu-link">友链</div>
       </div>
@@ -540,8 +556,8 @@
           description: "",
           stripContent: " 1.输入 2.输出 1.创建迷宫 2.寻找迷宫的出口路径 3.输出迷宫的出口路径  (文章目录)   前言 原题： https://www.nowcoder.com/practice/cf24906056f4488c9ddb132f317e03bc?tpId=37&amp;amp;tqId=21266&amp;amp;ru=/exam/oj   一、题目要求  1.输入 输入两个整数，N与M，分别代表二维数组的行数与列数。再输入对应的值，1代表墙壁，0代表可走的路，迷宫只有唯一一条通道可走。 （0，0）为入口",
           date: "Mon Apr 22 2024 16:45:38 GMT+0800",
-          updated: "Mon Feb 09 2026 01:58:53 GMT+0800",
-          cover: "/images/banner.webp",
+          updated: "Sun Feb 08 2026 01:30:00 GMT+0800",
+          cover: "https://img.cdn1.vip/i/69895fa2b6b67_1770610594.png",
         };
       </script>
         
