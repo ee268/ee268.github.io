@@ -25,18 +25,18 @@
 <meta property="og:site_name" content="ee268的个人博客">
 <meta property="og:description" content="环境准备 准备好node.js还有git，这里就不多赘述了，网上查找其他文章进行配置 参照官方文档提供的hexo和node.js的版本兼容 我是直接克隆的作者大大提供的template，里面提供了8.0+版本的hexo    Hexo 版本 最低版本 (Node.js 版本) 最高版本 (Node.js 版本)     8.0+ 20.19.0 latest   7.0+ 14.0.0 late">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/blog-content-img/hexoThemeDeployGithubPages/1.png">
-<meta property="og:image" content="http://example.com/images/blog-content-img/hexoThemeDeployGithubPages/2.png">
-<meta property="og:image" content="http://example.com/images/blog-content-img/hexoThemeDeployGithubPages/3.png">
-<meta property="og:image" content="http://example.com/images/blog-content-img/hexoThemeDeployGithubPages/4.png">
+<meta property="og:image" content="https://645429.xyz/PicGo/1774107024510">
+<meta property="og:image" content="https://645429.xyz/PicGo/1774107046970">
+<meta property="og:image" content="https://645429.xyz/PicGo/1774107055089">
+<meta property="og:image" content="https://645429.xyz/PicGo/1774107064378">
 <meta property="article:published_time" content="2026-02-13T14:55:00.000Z">
-<meta property="article:modified_time" content="2026-02-13T17:11:53.392Z">
+<meta property="article:modified_time" content="2026-03-21T15:32:05.830Z">
 <meta property="article:author" content="ee268">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="node.js">
 <meta property="article:tag" content="npm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/blog-content-img/hexoThemeDeployGithubPages/1.png">
+<meta name="twitter:image" content="https://645429.xyz/PicGo/1774107024510">
       <meta name="keywords" content="cpp, qt">
     <link rel="alternate" href="/atom.xml" title="ee268的个人博客" type="application/atom+xml">
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -182,9 +182,8 @@
     </nav>
 </div>
 <header id="header" aria-label="Site header">
-        <picture>
-        </picture>
-          <img  fetchpriority="high" src="/images/banner.jpg" alt="hexo主题reimu部署GithubPages">
+    <picture></picture>
+    <img  fetchpriority="high" src="https://645429.xyz/PicGo/1774107024510" alt="hexo主题reimu部署GithubPages">
   <div id="header-outer">
     <div id="header-title">
           <span id="logo">
@@ -214,7 +213,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Post</div>
-    <div class="sidebar-state-number">4</div>
+    <div class="sidebar-state-number">5</div>
   </div>
   <div class="sidebar-state-category">
     <div>Category</div>
@@ -222,7 +221,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>Tag</div>
-    <div class="sidebar-state-number">8</div>
+    <div class="sidebar-state-number">10</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -281,7 +280,7 @@
       <div class="article-date">
   <span class="article-date-link icon-calendar" data-aos="zoom-in">
     <time datetime="2026-02-13T14:55:00.000Z" itemprop="datePublished">2026-02-13</time>
-    <time style="display: none;" id="post-update-time">2026-02-14</time>
+    <time style="display: none;" id="post-update-time">2026-03-21</time>
   </span>
 </div>
 
@@ -395,7 +394,7 @@
 <h1 id="创建git仓库"><a class="markdownIt-Anchor" href="#创建git仓库"></a> 创建git仓库</h1>
 <p>想要在github pages部署你的个人网站，需要指定仓库名格式，在github中创建以<code>.github.io</code>为后缀的仓库</p>
 <p>开头必须是你的github昵称，<a target="_blank" rel="noopener" href="http://xn--ee268-4d3hh90d29pfn7b.github.io">例如我的ee268.github.io</a>，将ee268改成你的github昵称，仓库为public</p>
-<img src="/images/blog-content-img/hexoThemeDeployGithubPages/1.png" alt="image-20260214002123445" />
+<img src="https://645429.xyz/PicGo/1774107024510"/>
 <hr />
 <h1 id="生成ssh密钥"><a class="markdownIt-Anchor" href="#生成ssh密钥"></a> 生成ssh密钥</h1>
 <p>终端中输入以下命令，邮件地址必须是你github绑定的</p>
@@ -404,10 +403,10 @@
 <p>进入C盘的用户文件夹进入你的windows用户同名的文件夹，<code>C:\Users\你的windows用户名</code></p>
 <p>找到<code>.ssh</code>文件夹，里面有名为<code>id_rsa.pub</code>的文件，复制里面的全部内容</p>
 <p>在github.io的仓库打开<code>Settings</code></p>
-<img src="/images/blog-content-img/hexoThemeDeployGithubPages/2.png" alt="image-20260214002755988" />
+<img src="https://645429.xyz/PicGo/1774107046970"/>
 <p>如图所示添加部署密钥</p>
 <p>title任意，key粘贴你的ssh密钥，add key保存即可</p>
-<img src="/images/blog-content-img/hexoThemeDeployGithubPages/3.png" alt="image-20260214002927330" />
+<img src="https://645429.xyz/PicGo/1774107055089" style="zoom:70%;" />
 <hr />
 <h1 id="部署上传"><a class="markdownIt-Anchor" href="#部署上传"></a> 部署上传</h1>
 <p>再一次打开<code>_config.yml</code>，找到<code>deploy</code>字段</p>
@@ -416,7 +415,7 @@
 <p>或者hexo g生成之后hexo d再上传</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
 <p>现在以你的仓库名就可以浏览器直接访问了</p>
-<img src="/images/blog-content-img/hexoThemeDeployGithubPages/4.png" alt="image-20260214004625168" />
+<img src="https://645429.xyz/PicGo/1774107064378" style="zoom:50%;" />
     </div>
     <footer class="article-footer">
         <blockquote class="article-copyright">
@@ -442,8 +441,16 @@
     </footer>
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+          <img data-src="https://645429.xyz/PicGo/1774108421" data-sizes="auto" alt="详细教程，配置mingw64" class="lazyload">
+        <a href="/en/2026/03/10/%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%EF%BC%8C%E9%85%8D%E7%BD%AEmingw64/" aria-label="Prev: 详细教程，配置mingw64" title="Prev: 详细教程，配置mingw64"></a>
+        <div class="article-nav-caption">Prev</div>
+        <h3 class="article-nav-title">
+            详细教程，配置mingw64
+        </h3>
+      </div>
     <div class="article-nav-link-wrap right">
-          <img data-src="/images/cover/7.jpg" data-sizes="auto" alt="vs2022配置protobuf" class="lazyload">
+          <img data-src="/images/cover/1.jpg" data-sizes="auto" alt="vs2022配置protobuf" class="lazyload">
       <a href="/en/2025/09/08/vs2022%E9%85%8D%E7%BD%AEprotobuf/" aria-label="Next: vs2022配置protobuf"  title="Next: vs2022配置protobuf"></a>
       <div class="article-nav-caption">Next</div>
       <h3 class="article-nav-title">
@@ -492,10 +499,10 @@
       </div>
       <div>
         <span class="icon-brush"></span>
-        4.3k
+        3.1k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:22
+        00:16
       </div>
       <div>
         <span class="icon-eye"></span>
@@ -528,7 +535,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Post</div>
-    <div class="sidebar-state-number">4</div>
+    <div class="sidebar-state-number">5</div>
   </div>
   <div class="sidebar-state-category">
     <div>Category</div>
@@ -536,7 +543,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>Tag</div>
-    <div class="sidebar-state-number">8</div>
+    <div class="sidebar-state-number">10</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -669,8 +676,8 @@
           description: "",
           stripContent: " 环境准备 准备好node.js还有git，这里就不多赘述了，网上查找其他文章进行配置 参照官方文档提供的hexo和node.js的版本兼容 我是直接克隆的作者大大提供的template，里面提供了8.0+版本的hexo    Hexo 版本 最低版本 (Node.js 版本) 最高版本 (Node.js 版本)     8.0+ 20.19.0 latest   7.0+ 14.0.0 latest   6.2+ 12.13.0 latest   6.0+ 12.13.0 18.5.0   5",
           date: "Fri Feb 13 2026 22:55:00 GMT+0800",
-          updated: "Sat Feb 14 2026 01:11:53 GMT+0800",
-          cover: "/images/banner.jpg",
+          updated: "Sat Mar 21 2026 23:32:05 GMT+0800",
+          cover: "https://645429.xyz/PicGo/1774107024510",
         };
       </script>
         

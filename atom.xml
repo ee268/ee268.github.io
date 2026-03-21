@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2026-02-13T17:11:53.392Z</updated>
+  <updated>2026-03-21T05:05:00.000Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>详细教程，配置mingw64</title>
+    <link href="http://example.com/2026/03/10/%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%EF%BC%8C%E9%85%8D%E7%BD%AEmingw64/"/>
+    <id>http://example.com/2026/03/10/%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%EF%BC%8C%E9%85%8D%E7%BD%AEmingw64/</id>
+    <published>2026-03-10T08:48:23.000Z</published>
+    <updated>2026-03-21T05:05:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;详细教程配置mingw64&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#详细教程配置mingw64&quot;&gt;&lt;/a&gt; 详细教程，配置mingw64&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;下载&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Cpp" scheme="http://example.com/categories/Cpp/"/>
+    
+    
+    <category term="c++" scheme="http://example.com/tags/c/"/>
+    
+    <category term="Qt" scheme="http://example.com/tags/Qt/"/>
+    
+    <category term="MinGW" scheme="http://example.com/tags/MinGW/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo主题reimu部署GithubPages</title>
     <link href="http://example.com/2026/02/13/hexo%E4%B8%BB%E9%A2%98reimu%E9%83%A8%E7%BD%B2GithubPages/"/>
     <id>http://example.com/2026/02/13/hexo%E4%B8%BB%E9%A2%98reimu%E9%83%A8%E7%BD%B2GithubPages/</id>
     <published>2026-02-13T14:55:00.000Z</published>
-    <updated>2026-02-13T17:11:53.392Z</updated>
+    <updated>2026-03-21T15:32:05.830Z</updated>
     
     
       
