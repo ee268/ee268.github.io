@@ -25,9 +25,9 @@
 <meta property="og:site_name" content="ee268的个人博客">
 <meta property="og:description" content="栈的介绍 1.创建栈 2.各接口创建  1- 初始化栈 2 - 销毁栈 3 - 入栈 4 - 出栈 5 -  取出栈顶数据 6 - 计算栈的大小 7 - 栈的判空    (文章目录)   前言  栈的介绍 栈是一种特殊的线性表，数据的存取方式是后进先出，最后进入的数据称为栈顶，第一个进入的数据称为栈底。只能在栈顶对数据进行读取、删除、插入。 删除数据称作：出栈或退栈 插入数据称作：进栈、入栈或压">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://645429.xyz/PicGo/1774106053338">
-<meta property="og:image" content="https://645429.xyz/PicGo/17741059731251">
-<meta property="og:image" content="https://645429.xyz/PicGo/1774106053339">
+<meta property="og:image" content="https://asserts.645429.xyz/PicGo/1774106053338">
+<meta property="og:image" content="https://asserts.645429.xyz/PicGo/17741059731251">
+<meta property="og:image" content="https://asserts.645429.xyz/PicGo/1774106053339">
 <meta property="og:image" content="https://img.cdn1.vip/i/69895fa2b6b67_1770610594.png">
 <meta property="article:published_time" content="2024-04-22T08:48:23.000Z">
 <meta property="article:modified_time" content="2026-02-09T05:05:00.000Z">
@@ -35,7 +35,7 @@
 <meta property="article:tag" content="c语言">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://645429.xyz/PicGo/1774106053338">
+<meta name="twitter:image" content="https://asserts.645429.xyz/PicGo/1774106053338">
       <meta name="keywords" content="cpp, qt">
     <link rel="alternate" href="/atom.xml" title="ee268的个人博客" type="application/atom+xml">
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -182,7 +182,7 @@
 </div>
 <header id="header" aria-label="Site header">
     <picture></picture>
-    <img  fetchpriority="high" src="https://645429.xyz/PicGo/17741059731251" alt="C语言实现 - 栈">
+    <img  fetchpriority="high" src="https://asserts.645429.xyz/PicGo/17741059731251" alt="C语言实现 - 栈">
   <div id="header-outer">
     <div id="header-title">
           <span id="logo">
@@ -310,8 +310,8 @@
 <p>栈是一种特殊的线性表，数据的存取方式是<font color=red >后进先出</font>，最后进入的数据称为栈顶，第一个进入的数据称为栈底。只能在栈顶对数据进行读取、删除、插入。<br />
 <mark>删除数据称作：出栈或退栈</mark><br />
 <mark>插入数据称作：进栈、入栈或压栈</mark><br />
-<img src="https://645429.xyz/PicGo/1774106053338"/></p>
-<img src="https://645429.xyz/PicGo/17741059731251"/>
+<img src="https://asserts.645429.xyz/PicGo/1774106053338"/></p>
+<img src="https://asserts.645429.xyz/PicGo/17741059731251"/>
 ---
 <h1 id="一-需要实现的接口"><a class="markdownIt-Anchor" href="#一-需要实现的接口"></a> 一、需要实现的接口</h1>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StackInit</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//销毁栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StackDestroy</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//入栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StackPush</span><span class="params">(<span class="built_in">stack</span>* p, StackDataType x)</span>;</span><br><span class="line"><span class="comment">//出栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StackPop</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//取出栈顶数据</span></span><br><span class="line">StackDataType <span class="title function_">StackTop</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//计算栈的大小</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">StackSize</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br><span class="line"><span class="comment">//栈的判空</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">StackEmpty</span><span class="params">(<span class="built_in">stack</span>* p)</span>;</span><br></pre></td></tr></table></figure>
@@ -337,7 +337,7 @@
 <h1 id="三-测试"><a class="markdownIt-Anchor" href="#三-测试"></a> 三、测试</h1>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">stacktest1</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="built_in">stack</span> p;<span class="comment">//不需要赋值，使用StackInit</span></span><br><span class="line">	StackInit(&amp;p);<span class="comment">//传参需要传地址</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//依次入数据 </span></span><br><span class="line">	StackPush(&amp;p, <span class="number">1</span>);</span><br><span class="line">	StackPush(&amp;p, <span class="number">2</span>);</span><br><span class="line">	StackPush(&amp;p, <span class="number">3</span>);</span><br><span class="line">	StackPush(&amp;p, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//一共入了四个数据</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;StackSize = %d\n&quot;</span>, StackSize(&amp;p));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (!StackEmpty(&amp;p)) &#123;</span><br><span class="line">	<span class="comment">//使用逻辑非运算符（非0为假，0为真），栈不为空时继续，为空时停止</span></span><br><span class="line">	<span class="comment">//因为栈为空返回true，不为空返回false</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, StackTop(&amp;p));<span class="comment">//取出栈顶数据并输出</span></span><br><span class="line">		StackPop(&amp;p);<span class="comment">//输出完之后将栈顶移除</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	StackDestroy(&amp;p);<span class="comment">//栈使用完毕需要销毁，防止内存泄漏</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	stacktest1();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="五-运行结果"><a class="markdownIt-Anchor" href="#五-运行结果"></a> 五、运行结果</h1>
-<img src="https://645429.xyz/PicGo/1774106053339"/>
+<img src="https://asserts.645429.xyz/PicGo/1774106053339"/>
 栈的大小为4，输出的顺序满足了后进先出
 <p><mark>栈的应用（迷宫问题）：</mark></p>
 <div class="post-link-card-wrap">
@@ -394,7 +394,7 @@
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
       <div class="article-nav-link-wrap left">
-            <img data-src="/images/cover/2.jpg" data-sizes="auto" alt="vs2022配置protobuf" class="lazyload">
+            <img data-src="/images/cover/9.jpg" data-sizes="auto" alt="vs2022配置protobuf" class="lazyload">
         <a href="/2025/09/08/vs2022%E9%85%8D%E7%BD%AEprotobuf/" aria-label="前一篇: vs2022配置protobuf" title="前一篇: vs2022配置protobuf"></a>
         <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">
@@ -402,7 +402,7 @@
         </h3>
       </div>
     <div class="article-nav-link-wrap right">
-        <img data-src="https://645429.xyz/PicGo/1774106272887" data-sizes="auto" alt="牛客网 - 迷宫问题（C语言）" class="lazyload">
+        <img data-src="https://asserts.645429.xyz/PicGo/1774106272887" data-sizes="auto" alt="牛客网 - 迷宫问题（C语言）" class="lazyload">
       <a href="/2024/04/22/%E7%89%9B%E5%AE%A2%E7%BD%91%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98C%E8%AF%AD%E8%A8%80/" aria-label="后一篇: 牛客网 - 迷宫问题（C语言）"  title="后一篇: 牛客网 - 迷宫问题（C语言）"></a>
       <div class="article-nav-caption">后一篇</div>
       <h3 class="article-nav-title">
@@ -629,7 +629,7 @@
           stripContent: " 栈的介绍 1.创建栈 2.各接口创建  1- 初始化栈 2 - 销毁栈 3 - 入栈 4 - 出栈 5 -  取出栈顶数据 6 - 计算栈的大小 7 - 栈的判空    (文章目录)   前言  栈的介绍 栈是一种特殊的线性表，数据的存取方式是后进先出，最后进入的数据称为栈顶，第一个进入的数据称为栈底。只能在栈顶对数据进行读取、删除、插入。 删除数据称作：出栈或退栈 插入数据称作：进栈、入栈或压栈   ---  一、需要实现的接口 1234567891011121314//初始化栈void S",
           date: "Mon Apr 22 2024 16:48:23 GMT+0800",
           updated: "Mon Feb 09 2026 13:05:00 GMT+0800",
-          cover: "https://645429.xyz/PicGo/17741059731251",
+          cover: "https://asserts.645429.xyz/PicGo/17741059731251",
         };
       </script>
         
