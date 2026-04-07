@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2026-03-21T05:05:00.000Z</updated>
+  <updated>2026-04-07T08:35:52.766Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++11实现线程安全的单例模板</title>
+    <link href="http://example.com/2026/04/07/C++11%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%8D%95%E4%BE%8B%E6%A8%A1%E6%9D%BF/"/>
+    <id>http://example.com/2026/04/07/C++11%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%8D%95%E4%BE%8B%E6%A8%A1%E6%9D%BF/</id>
+    <published>2026-04-07T08:23:00.000Z</published>
+    <updated>2026-04-07T08:35:52.766Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;c11实现线程安全的单例模板&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#c11实现线程安全的单例模板&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Cpp" scheme="http://example.com/categories/Cpp/"/>
+    
+    
+    <category term="c++" scheme="http://example.com/tags/c/"/>
+    
+    <category term="设计模式" scheme="http://example.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>详细教程，配置mingw64</title>
