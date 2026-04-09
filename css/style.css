@@ -43,9 +43,9 @@
   --highlight-deletion-bg: #fbe9e7;
   --highlight-addition: #2e7d32;
   --highlight-addition-bg: #f1f8e9;
-  --cursor-default: url("../images/cursor/reimu-cursor-default.png"), auto;
-  --cursor-pointer: url("../images/cursor/reimu-cursor-pointer.png"), pointer;
-  --cursor-text: url("../images/cursor/reimu-cursor-text.png"), text;
+  --cursor-default: url("../images/cursor/mousePointer_default.png"), auto;
+  --cursor-pointer: url("../images/cursor/mousePointer_pointer.png"), pointer;
+  --cursor-text: url("../images/cursor/mousePointer_text.png"), text;
   --footer-icon: url("../images/load.jpg");
   --sponsor-icon: url("../images/taichi.svg");
   --top-icon: url("../images/icon/top.webp");
@@ -954,6 +954,32 @@ button {
 .select-items li.selected {
   background: var(--red-1);
   color: #fff;
+}
+.triangle-badge {
+  position: absolute;
+  top: -6px;
+  right: -26px;
+  transform: rotate(45deg);
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 40px solid var(--red-2);
+  display: inline-block;
+  transition: 0.3s;
+}
+@media screen and (max-width: 959px) {
+  .triangle-badge {
+    display: none;
+  }
+}
+.triangle-badge-icon {
+  position: absolute;
+  top: 12px;
+  left: -13px;
+  color: var(--color-header-background) !important;
+  font-size: 28px;
+  transition: 0.3s;
 }
 .hr-line {
   margin: 12px 36px;
@@ -2114,6 +2140,242 @@ button {
 }
 .archives-category-list-link:before {
   font-weight: 700;
+}
+.animes-outer-wrap {
+  background: var(--color-wrap);
+  border-radius: 12px;
+  padding: 16px 0;
+}
+.animes-section {
+  padding: 20px 36px;
+}
+.animes-section:hover .animes-year-wrap:after {
+  width: 3em;
+}
+@media screen and (max-width: 767px) {
+  .animes-section {
+    padding: 20px 16px;
+  }
+}
+.animes-year-wrap {
+  margin-bottom: 32px;
+  position: relative;
+}
+.animes-year-wrap:before {
+  content: '';
+  width: 100%;
+  border-bottom: 1px solid var(--color-h2-border);
+  position: absolute;
+  bottom: -15px;
+  transition: 1s;
+}
+.animes-year-wrap:after {
+  content: '';
+  position: absolute;
+  background: var(--color-h2-after);
+  width: 1em;
+  height: 7px;
+  bottom: -18px;
+  left: 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow-red-6-shadow);
+  transition: 0.3s;
+}
+.animes-year {
+  text-decoration: none;
+  color: var(--color-archive-year);
+  font-weight: bold;
+  font-size: 24px;
+}
+.anime-card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+.anime-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.anime-card {
+  width: 100%;
+  height: 240px;
+  max-width: 180px;
+  background: var(--color-wrap);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  font-size: 20px;
+  color: var(--color-default);
+  display: flex;
+  background: rgba(0,0,0,0.28);
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.anime-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+.anime-card-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+.anime-card-placeholder {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-default);
+  opacity: 0.8;
+  font-size: 14px;
+}
+.anime-card-name {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+  word-break: break-word;
+  background: rgba(0,0,0,0.25);
+  padding: 12px;
+  transition: background 0.3s, transform 0.3s;
+}
+.anime-card:hover .anime-card-cover {
+  transform: scale(1.06);
+}
+.anime-card:hover .anime-card-name {
+  background: rgba(0,0,0,0.45);
+  transform: scale(1.02);
+}
+.bgm-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  background: var(--color-wrap);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: var(--shadow-card);
+  margin: 16px 0;
+}
+.bgm-cover {
+  width: 100%;
+  aspect-ratio: 2/3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-background);
+}
+.bgm-cover-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.bgm-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+.bgm-cover-link:hover img {
+  transform: scale(1.06);
+}
+.bgm-cover-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-default);
+  opacity: 0.7;
+  font-size: 14px;
+}
+.bgm-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  text-align: left;
+}
+.bgm-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-default);
+}
+.bgm-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bgm-score {
+  background: var(--color-h2-after);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.bgm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+}
+.bgm-tag {
+  background: var(--color-background);
+  color: var(--color-default);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+.bgm-info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  text-align: left;
+}
+.article-entry .bgm-info {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+}
+.bgm-info-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 8px;
+  font-size: 13px;
+}
+.bgm-info-key {
+  color: var(--color-link);
+  font-weight: bold;
+}
+.bgm-info-value {
+  color: var(--color-default);
+  opacity: 0.85;
+}
+.bgm-card-error {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px dashed var(--color-border);
+  color: var(--color-default);
+  opacity: 0.8;
 }
 #footer {
   background-color: linear-gradient(to top, var(--color-footer-background) 50%, transparent);
