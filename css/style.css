@@ -2271,6 +2271,18 @@ button {
   box-shadow: var(--shadow-card);
   margin: 16px 0;
 }
+@media screen and (max-width: 479px) {
+  .bgm-card {
+    grid-template-columns: 1fr;
+  }
+  .bgm-cover {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  .bgm-content {
+    width: 100%;
+  }
+}
 .bgm-cover {
   width: 100%;
   aspect-ratio: 2/3;
