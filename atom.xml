@@ -6,7 +6,7 @@
   <link href="https://ee268blog.645429.xyz/atom.xml" rel="self"/>
   
   <link href="https://ee268blog.645429.xyz/"/>
-  <updated>2026-04-07T08:35:52.766Z</updated>
+  <updated>2026-05-02T07:33:48.702Z</updated>
   <id>https://ee268blog.645429.xyz/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>zerotier虚拟内网通过域名反向代理https</title>
+    <link href="https://ee268blog.645429.xyz/2026/05/02/zerotier%E8%99%9A%E6%8B%9F%E5%86%85%E7%BD%91%E9%80%9A%E8%BF%87%E5%9F%9F%E5%90%8D%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    <id>https://ee268blog.645429.xyz/2026/05/02/zerotier%E8%99%9A%E6%8B%9F%E5%86%85%E7%BD%91%E9%80%9A%E8%BF%87%E5%9F%9F%E5%90%8D%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</id>
+    <published>2026-05-02T07:33:00.000Z</published>
+    <updated>2026-05-02T07:33:48.702Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;安装必要的工具&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="zerotier" scheme="https://ee268blog.645429.xyz/tags/zerotier/"/>
+    
+    <category term="nginx" scheme="https://ee268blog.645429.xyz/tags/nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>C++11实现线程安全的单例模板</title>
