@@ -40,6 +40,7 @@ async function respondRequest(request, options) {
 
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
+  if (url.hostname === "api.bgm.tv" || url.hostname === "lain.bgm.tv") return;
   // 检查请求的域名是否在 CacheDomain 中
   if (cacheDomain.includes(url.hostname)) {
     event.respondWith(respondRequest(event.request));

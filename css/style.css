@@ -2289,6 +2289,7 @@ button {
   border-radius: 8px;
   overflow: hidden;
   background: var(--color-background);
+  object-fit: cover;
 }
 .bgm-cover-link {
   display: block;
@@ -2301,6 +2302,7 @@ button {
   object-fit: cover;
   display: block;
   transition: transform 0.3s;
+  opacity: 1;
 }
 .bgm-cover-link:hover img {
   transform: scale(1.06);
@@ -2381,6 +2383,11 @@ button {
 .bgm-info-value {
   color: var(--color-default);
   opacity: 0.85;
+}
+.bgm-card-loading {
+  text-align: center;
+  padding: 20px;
+  color: var(--color-meta);
 }
 .bgm-card-error {
   padding: 16px;

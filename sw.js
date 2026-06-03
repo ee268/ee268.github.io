@@ -1,4 +1,4 @@
-const VERSION = "1777707322118";const preCache = ["/images/taichi.png","/images/banner.jpg","/css/loader.css","/css/style.css","/js/script.js"];const cacheDomain = [
+const VERSION = "1780508924681";const preCache = ["/images/taichi.png","/images/banner.jpg","/css/loader.css","/css/style.css","/js/script.js"];const cacheDomain = [
   "fonts.googleapis.com",
   "npm.webcache.cn",
   "unpkg.com",
@@ -40,6 +40,7 @@ async function respondRequest(request, options) {
 
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
+  if (url.hostname === "api.bgm.tv" || url.hostname === "lain.bgm.tv") return;
   // 检查请求的域名是否在 CacheDomain 中
   if (cacheDomain.includes(url.hostname)) {
     event.respondWith(respondRequest(event.request));

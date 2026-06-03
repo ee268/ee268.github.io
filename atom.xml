@@ -6,7 +6,7 @@
   <link href="https://ee268blog.645429.xyz/atom.xml" rel="self"/>
   
   <link href="https://ee268blog.645429.xyz/"/>
-  <updated>2026-05-02T07:33:48.702Z</updated>
+  <updated>2026-06-03T16:09:23.298Z</updated>
   <id>https://ee268blog.645429.xyz/</id>
   
   <author>
@@ -17,21 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>QML项目部署并使用InnoSetup打包</title>
+    <link href="https://ee268blog.645429.xyz/2026/05/18/20260518-QML%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%B9%B6%E4%BD%BF%E7%94%A8InnoSetup%E6%89%93%E5%8C%85/"/>
+    <id>https://ee268blog.645429.xyz/2026/05/18/20260518-QML%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%B9%B6%E4%BD%BF%E7%94%A8InnoSetup%E6%89%93%E5%8C%85/</id>
+    <published>2026-05-17T19:09:00.000Z</published>
+    <updated>2026-06-03T16:09:23.298Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;选择部署工具&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#选择部署工具&quot;&gt;&lt;/a&gt; 选择部署工具&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;根据你的qt编译器和版本选择命令行工具&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在qt</summary>
+        
+      
+    
+    
+    
+    
+    <category term="QML" scheme="https://ee268blog.645429.xyz/tags/QML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>zerotier虚拟内网通过域名反向代理https</title>
     <link href="https://ee268blog.645429.xyz/2026/05/02/zerotier%E8%99%9A%E6%8B%9F%E5%86%85%E7%BD%91%E9%80%9A%E8%BF%87%E5%9F%9F%E5%90%8D%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
     <id>https://ee268blog.645429.xyz/2026/05/02/zerotier%E8%99%9A%E6%8B%9F%E5%86%85%E7%BD%91%E9%80%9A%E8%BF%87%E5%9F%9F%E5%90%8D%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</id>
     <published>2026-05-02T07:33:00.000Z</published>
-    <updated>2026-05-02T07:33:48.702Z</updated>
+    <updated>2026-05-02T08:12:10.893Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;安装必要的工具&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+    <summary type="html">&lt;h2 id=&quot;安装必要的工具&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#安装必要的工具&quot;&gt;&lt;/a&gt; &lt;strong&gt;安装必要的工具&lt;/strong&gt;&lt;/h2&gt;
+&lt;figure class=&quot;highlight</summary>
         
       
     
