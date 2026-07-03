@@ -6,7 +6,7 @@
   <link href="https://ee268blog.645429.xyz/atom.xml" rel="self"/>
   
   <link href="https://ee268blog.645429.xyz/"/>
-  <updated>2026-06-03T16:09:23.298Z</updated>
+  <updated>2026-07-03T15:22:09.213Z</updated>
   <id>https://ee268blog.645429.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ee268blog.645429.xyz/2026/05/18/20260518-QML%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%B9%B6%E4%BD%BF%E7%94%A8InnoSetup%E6%89%93%E5%8C%85/"/>
     <id>https://ee268blog.645429.xyz/2026/05/18/20260518-QML%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%B9%B6%E4%BD%BF%E7%94%A8InnoSetup%E6%89%93%E5%8C%85/</id>
     <published>2026-05-17T19:09:00.000Z</published>
-    <updated>2026-06-03T16:09:23.298Z</updated>
+    <updated>2026-07-03T15:22:09.213Z</updated>
     
     
       
@@ -96,6 +96,74 @@
   </entry>
   
   <entry>
+    <title>Qt（MSVC）中使用CMake引入yaml-cpp</title>
+    <link href="https://ee268blog.645429.xyz/2026/03/23/Qt(MSVC)%E4%B8%AD%E4%BD%BF%E7%94%A8CMake%E5%BC%95%E5%85%A5yaml-cpp/"/>
+    <id>https://ee268blog.645429.xyz/2026/03/23/Qt(MSVC)%E4%B8%AD%E4%BD%BF%E7%94%A8CMake%E5%BC%95%E5%85%A5yaml-cpp/</id>
+    <published>2026-03-23T09:23:00.000Z</published>
+    <updated>2026-07-03T15:25:33.574Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;qtmsvc中使用cmake引入yaml-cpp&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#qtmsvc中使用cmake引入yaml-cpp&quot;&gt;&lt;/a&gt; Qt（MSVC）中使用CMake引入yaml-cpp&lt;/h2&gt;
+&lt;hr</summary>
+        
+      
+    
+    
+    
+    <category term="Cpp" scheme="https://ee268blog.645429.xyz/categories/Cpp/"/>
+    
+    
+    <category term="c++" scheme="https://ee268blog.645429.xyz/tags/c/"/>
+    
+    <category term="qt" scheme="https://ee268blog.645429.xyz/tags/qt/"/>
+    
+    <category term="CMake" scheme="https://ee268blog.645429.xyz/tags/CMake/"/>
+    
+    <category term="MSVC" scheme="https://ee268blog.645429.xyz/tags/MSVC/"/>
+    
+    <category term="YML" scheme="https://ee268blog.645429.xyz/tags/YML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qt（MinGW）中使用CMake引入yaml-cpp</title>
+    <link href="https://ee268blog.645429.xyz/2026/03/23/Qt(MinGW)%E4%B8%AD%E4%BD%BF%E7%94%A8CMake%E5%BC%95%E5%85%A5yaml-cpp/"/>
+    <id>https://ee268blog.645429.xyz/2026/03/23/Qt(MinGW)%E4%B8%AD%E4%BD%BF%E7%94%A8CMake%E5%BC%95%E5%85%A5yaml-cpp/</id>
+    <published>2026-03-23T06:23:00.000Z</published>
+    <updated>2026-07-03T15:25:07.510Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;qtmingw中使用cmake引入yaml-cpp&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#qtmingw中使用cmake引入yaml-cpp&quot;&gt;&lt;/a&gt; Qt（MinGW）中使用CMake引入yaml-cpp&lt;/h2&gt;
+&lt;hr</summary>
+        
+      
+    
+    
+    
+    <category term="Cpp" scheme="https://ee268blog.645429.xyz/categories/Cpp/"/>
+    
+    
+    <category term="c++" scheme="https://ee268blog.645429.xyz/tags/c/"/>
+    
+    <category term="qt" scheme="https://ee268blog.645429.xyz/tags/qt/"/>
+    
+    <category term="CMake" scheme="https://ee268blog.645429.xyz/tags/CMake/"/>
+    
+    <category term="YML" scheme="https://ee268blog.645429.xyz/tags/YML/"/>
+    
+    <category term="MinGW" scheme="https://ee268blog.645429.xyz/tags/MinGW/"/>
+    
+  </entry>
+  
+  <entry>
     <title>详细教程，配置mingw64</title>
     <link href="https://ee268blog.645429.xyz/2026/03/10/%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%EF%BC%8C%E9%85%8D%E7%BD%AEmingw64/"/>
     <id>https://ee268blog.645429.xyz/2026/03/10/%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%EF%BC%8C%E9%85%8D%E7%BD%AEmingw64/</id>
@@ -120,9 +188,9 @@
     
     <category term="c++" scheme="https://ee268blog.645429.xyz/tags/c/"/>
     
-    <category term="Qt" scheme="https://ee268blog.645429.xyz/tags/Qt/"/>
-    
     <category term="MinGW" scheme="https://ee268blog.645429.xyz/tags/MinGW/"/>
+    
+    <category term="Qt" scheme="https://ee268blog.645429.xyz/tags/Qt/"/>
     
   </entry>
   
